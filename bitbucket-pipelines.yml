@@ -1,0 +1,36 @@
+image: node:8
+
+pipelines:
+  branches:
+    # master:
+    #   - step:
+    #       deployment: production
+    #       script:
+    #         - yarn install --force && yarn cache clean
+    #         - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+    #         - yarn docker:release
+    #         - yarn deploy-server
+    #       services:
+    #         - docker
+    #       caches:
+    #         - docker
+    # staging:
+    #   - step:
+    #       deployment: staging
+    #       script:
+    #         - yarn install --force && yarn cache clean
+    #         - docker login --username $DOCKER_USERNAME --password $DOCKER_PASSWORD
+    #         - yarn docker:release:staging
+    #         - yarn deploy-server
+    #       services:
+    #         - docker
+    #       caches:
+    #         - docker
+
+options:
+  docker: true
+
+definitions:
+  services:
+    docker:
+      memory: 3072
